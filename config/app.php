@@ -1,5 +1,7 @@
 <?php
 
+use App\Providers\RepositoryServiceProvider;
+use App\Providers\UseCaseServiceProvider;
 use Illuminate\Support\Facades\Facade;
 
 return [
@@ -41,7 +43,7 @@ return [
     |
     */
 
-    'debug' => (bool) env('APP_DEBUG', false),
+    'debug' => (bool)env('APP_DEBUG', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -195,6 +197,15 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /**
+         * Repository Service Providers..
+         */
+        RepositoryServiceProvider::class,
+
+        /**
+         * UseCase Service Providers...
+         */
+        UseCaseServiceProvider::class
     ],
 
     /*
